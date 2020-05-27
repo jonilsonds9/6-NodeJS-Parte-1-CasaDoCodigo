@@ -16,18 +16,8 @@ module.exports = (app) => {
   });
   
   app.get('/livros', function(req, res) {
-    res.send(
-      `
-        <!DOCTYPE html>
-        <head>
-          <meta charset="UTF-8">
-          <title>Document</title>
-        </head>
-        <body>
-          <h1> Listagem de livros </h1>
-        </body>
-        </html>
-      `
+    res.marko(
+      require('../views/livros/lista/lista.marko')
     );
   });
 };
