@@ -43,4 +43,40 @@ module.exports = (app) => {
             .then(res.redirect('/livros'))
             .catch(erro => console.log(erro));
   });
+
+  // app.get('/busca/:id', function(req, res) {
+  //   console.log(req.params.id);
+
+  //   const livroDAO = new LivroDAO(db);
+  //   livroDAO.buscaPorId(req.params.id)
+  //           .then((resultado) => console.log(resultado))
+  //           .catch(erro => console.log(erro));
+  // });
+
+  // app.get('/atualiza/:id', function(req, res) {
+  //   res.marko(require('../views/form/form.marko'));
+  // });
+
+  // app.post('/atualiza/:id', function(req, res) {
+  //   console.log(req.params.id);
+  //   console.log(req.body);
+
+  //   const livroDAO = new LivroDAO(db);
+  //   livroDAO.atualiza(req.params.id, req.body)
+  //           .then(res.redirect('/livros'))
+  //           .catch(erro => console.log(erro));
+  // });
+
+  // app.get('/remove/:id', function(req, res) {
+  //   console.log(req.params.id);
+
+  //   const livroDAO = new LivroDAO(db);
+  //   livroDAO.remove(req.params.id)
+  //           .then(() => {
+  //             console.log('Livro removido com sucesso!')
+
+  //             res.redirect('/livros')
+  //           })
+  //           .catch(erro => console.log(erro));
+  // });
 };
