@@ -40,7 +40,7 @@ module.exports = (app) => {
 
     const livroDAO = new LivroDAO(db);
     livroDAO.adiciona(req.body)
-            .then(l???)
+            .then(res.redirect('/livros'))
             .catch(erro => console.log(erro));
   });
 };
