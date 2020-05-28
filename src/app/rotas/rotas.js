@@ -29,6 +29,18 @@ module.exports = (app) => {
               }
             ))
             .catch(erro => console.log(erro));
+  });
 
+  app.get('/livros/form', function(req, res) {
+    res.marko(require('../views/form/form.marko'));
+  });
+  
+  app.post('/livros', function(req, res) {
+    console.log(req.body);
+
+    const livroDAO = new LivroDAO(db);
+    livroDAO.adiciona(req.body)
+            .then(l???)
+            .catch(erro => console.log(erro));
   });
 };
