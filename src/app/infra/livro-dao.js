@@ -46,12 +46,12 @@ class livroDAO {
       this._db.get(
         'SELECT * FROM livros WHERE id = ?',
         [id], 
-        (erro, resultado) => {
+        (erro, livro) => {
           if (erro) {
             return reject('Não foi possível encontrar o livro!');
           }
 
-          return resolve(resultado);
+          return resolve(livro);
         }
       )
     });
