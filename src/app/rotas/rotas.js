@@ -44,6 +44,15 @@ module.exports = (app) => {
             .catch(erro => console.log(erro));
   });
 
+  app.delete('/livros/:id', function(req, res) {
+    const id = req.params.id;
+
+    const livroDAO = new LivroDAO(db);
+    livroDAO.remove(id)
+            .then(() => res.status(200).end())
+            .catch(erro => console.log(erro));
+  });
+
   // app.get('/busca/:id', function(req, res) {
   //   console.log(req.params.id);
 
@@ -64,19 +73,6 @@ module.exports = (app) => {
   //   const livroDAO = new LivroDAO(db);
   //   livroDAO.atualiza(req.params.id, req.body)
   //           .then(res.redirect('/livros'))
-  //           .catch(erro => console.log(erro));
-  // });
-
-  // app.get('/remove/:id', function(req, res) {
-  //   console.log(req.params.id);
-
-  //   const livroDAO = new LivroDAO(db);
-  //   livroDAO.remove(req.params.id)
-  //           .then(() => {
-  //             console.log('Livro removido com sucesso!')
-
-  //             res.redirect('/livros')
-  //           })
   //           .catch(erro => console.log(erro));
   // });
 };
